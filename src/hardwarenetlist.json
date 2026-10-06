@@ -1,0 +1,78 @@
+{
+  "project_metadata": {
+    "system_name": "Universal Modular Mechatronic Controller",
+    "architecture_version": "1.2",
+    "classification": "Multi-Axis Closed-Loop Robotics Motherboard",
+    "pcb_layer_count": 4,
+    "star_ground_topology": "true"
+  },
+  "component_registry": {
+    "MCU_BRAIN": {
+      "mpn": "ESP32-S3-WROOM-1-N8R8",
+      "description": "Dual-Core 240MHz RISC-V Microcontroller Core",
+      "net_class": "Signal_Logic"
+    },
+    "MOTOR_DRIVER_H_BRIDGE": {
+      "mpn": "Infineon-IFX9201SGAUMA1",
+      "description": "10A High-Current Bidirectional Gate Controller",
+      "net_class": "Power_Actuator"
+    },
+    "BMS_FIREWALL_CORE": {
+      "mpn": "TI-BQ76920",
+      "description": "3-Series Lithium Storage Cell Management Array",
+      "net_class": "BMS_Sense"
+    },
+    "DC_BUCK_BOOST_REGULATOR": {
+      "mpn": "TI-BQ25713",
+      "description": "Synchronous Buck-Boost Magnetic Inductive Charge Controller",
+      "net_class": "Power_Charging"
+    },
+    "HIGH_GAIN_INSTRUMENT_AMP": {
+      "mpn": "TI-INA826",
+      "description": "Ultra-Low-Noise Differential Analog Signal Conditioning Frontend",
+      "net_class": "Analog_Sensor_Differential"
+    },
+    "PASSIVE_DISPLAY_CONTROLLER": {
+      "mpn": "GDEW0102T4-JD79651",
+      "description": "1.02-inch Thin-Bezel Electrophoretic Display Interface",
+      "net_class": "SPI_Bus"
+    },
+    "M2_COMMUNICATION_SLOT": {
+      "mpn": "Standard Key-E M.2 Slot Connector",
+      "description": "Modular Multi-Drop High-Frequency Transceiver Bay",
+      "net_class": "SPI_Bus_RF_Isolated"
+    },
+    "ANALOG_AXIS_JOYSTICK": {
+      "mpn": "Panasonic-EVQ-Q2-Series",
+      "description": "Subminiature 5-Way Ergonomic Directional Navigation Switch",
+      "net_class": "Signal_Logic"
+    },
+    "SCHOTTKY_FLYBACK_DIODE_1": { "mpn": "Vishay-VS-12TQ045", "description": "High-Voltage Transient Suppression Clamp Phase A" },
+    "SCHOTTKY_FLYBACK_DIODE_2": { "mpn": "Vishay-VS-12TQ045", "description": "High-Voltage Transient Suppression Clamp Phase B" },
+    "SCHOTTKY_FLYBACK_DIODE_3": { "mpn": "Vishay-VS-12TQ045", "description": "High-Voltage Transient Suppression Clamp Phase C" }
+  },
+  "net_class_routing_constraints": {
+    "Power_Actuator": {
+      "min_trace_width_mm": 1.20,
+      "copper_weight_oz": 2.0,
+      "clearance_keepout_mm": 3.0
+    },
+    "Power_Charging": {
+      "min_trace_width_mm": 0.80,
+      "copper_weight_oz": 1.0
+    },
+    "BMS_Sense": {
+      "min_trace_width_mm": 0.25,
+      "shielding_topology": "Parallel RC Low-Pass Filtered Matrix"
+    },
+    "SPI_Bus_RF_Isolated": {
+      "min_trace_width_mm": 0.25,
+      "routing_type": "Grounded Coplanar Waveguide (GCPW)",
+      "target_impedance_ohms": 50.0,
+      "ground_guard_ring": "true"
+    },
+    "Signal_Logic": {
+      "min_trace_width_mm": 0.25
+    }
+  }
+}
